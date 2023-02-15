@@ -34,12 +34,27 @@ class ca {
 		double finput3 = Double.parseDouble(finput2);
 		System.out.println(finput3);
 		
+		
 		ArrayList<Integer> tmpa = new ArrayList<Integer>();
 		for(int i=0; i<31; i++) {
+		
 			
-			finput3 = finput3 * 2;
-			String tmp = Double.toString(finput3);
-			tmpa.add(Integer.parseInt(finput2.substring(0, index)));
+			finput3 = finput3 * 2.0;
+		
+			tmpa.add((int)finput3);
+			
+			
+			String tmp1 = Double.toString(finput3);
+			int index2 = tmp1.indexOf(".");
+			
+			
+			String tmp2 = tmp1.substring(index2+1);
+			
+			String tmp3 = ("0."+tmp2);
+			
+			finput3 = Double.parseDouble(tmp3);
+			
+			
 			if(finput3==1.0) {
 				break;
 			}
